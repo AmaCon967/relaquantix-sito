@@ -7,5 +7,7 @@ node_modules/
 
 # Cartelle di consegna dei materiali: i file utili vanno copiati in assets/,
 # le cartelle originali NON devono finire nel repo pubblico.
-New loghi/
-Logo*/
+# La "/" iniziale ancora il pattern alla radice: senza, "Logo*/" con
+# core.ignorecase=true (predefinito su macOS) scarta anche assets/img/logo/.
+/New loghi/
+/Logo*/
