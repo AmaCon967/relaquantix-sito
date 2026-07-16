@@ -13,7 +13,7 @@ Doppio uso: presenza aziendale + pagine legali che coprono i requisiti App Store
 | Ambito | Scelta |
 |---|---|
 | Struttura | One-page (`index.html`) + pagine legali/supporto |
-| Lingua | Italiano (predisposto per aggiungere `/en/` in futuro) |
+| Lingua | Bilingue: italiano alla radice, inglese sotto `/en/` — vedi sezione dedicata |
 | Tecnologia | HTML/CSS/JS statico, zero build, zero dipendenze |
 | Direzione visiva | **B · Luce editoriale** — avorio, indaco + oro antico, serif |
 | Font | Sistema: Baskerville/Georgia (titoli) + system-ui (testo). Nessun font esterno (GDPR-clean) |
@@ -111,6 +111,39 @@ resta generica. A pubblicazione avvenuta si aggiunge una sezione showcase con i 
 - [ ] **Hosting/dati**: verificare la region del data center Hostinger e allineare la frase sui trasferimenti extra-UE nella privacy.
 - [ ] (Opzionale) Upgrade tipografico con web font self-hosted per un tocco ancora più premium.
 - [ ] (Opzionale) Immagine `og:image` 1200×630 per anteprime social.
+
+## Sito bilingue (16/07/2026)
+
+L'italiano resta la lingua principale, alla radice; l'inglese vive sotto `/en/`.
+Scelta motivata: le versioni inglesi di privacy e supporto servono come **Privacy Policy
+URL e Support URL localizzate su App Store Connect**, che permette di impostarle per lingua.
+
+| Italiano | Inglese |
+|---|---|
+| `/` | `/en/` |
+| `/privacy.html` | `/en/privacy.html` |
+| `/note-legali.html` | `/en/legal.html` |
+| `/supporto.html` | `/en/support.html` |
+
+- **Selettore**: `IT | EN` testuale nell'header (niente bandiere: indicano nazioni, non
+  lingue — quale bandiera per l'inglese?). Ogni pagina punta alla **propria controparte**,
+  non alla home: da `/note-legali.html` si va a `/en/legal.html`.
+- **hreflang**: ogni pagina dichiara `it`, `en` e `x-default` (→ italiano). Servono a dire
+  a Google che sono la stessa pagina in due lingue, così non competono tra loro.
+- **Ordine nell'header**: brand → nav-links → lang → nav-toggle. **Non cambiarlo**: su
+  mobile `.nav-links` è in `position:absolute` (fuori dal flusso), quindi è `.lang` a
+  portare `margin-left:auto` e a spingere selettore e pulsante a destra. Se si sposta il
+  toggle prima del lang, su telefono finisce appiccicato al logo.
+- **Pagine legali in entrambe le lingue**: non è una scelta estetica. Il GDPR chiede che
+  l'informativa sia comprensibile all'interessato: per un utente italiano, in italiano.
+  Le versioni inglesi portano la nota "traduzione di cortesia, prevale l'italiano".
+- **Sitemap**: contiene solo le pagine indicizzabili (home e supporto, in due lingue) con
+  annotazioni `xhtml:link`. Privacy e note legali sono `noindex`, quindi ne restano fuori.
+
+⚠️ **Il lockup nel footer ha la dicitura in italiano** ("PRODOTTI DIGITALI ED EDITORIALI")
+anche sulle pagine inglesi. A 8,6px è un dettaglio grafico più che un testo, ma la
+soluzione pulita è farsi fare da Claude Design una variante con "DIGITAL AND EDITORIAL
+PRODUCTS".
 
 ## Deploy automatico (webhook GitHub → Coolify)
 
