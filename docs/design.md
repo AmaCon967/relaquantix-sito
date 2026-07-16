@@ -54,13 +54,43 @@ resta generica. A pubblicazione avvenuta si aggiunge una sezione showcase con i 
 
 ## Punti aperti / TODO operativi
 - [ ] **Creare le caselle email** `info@relaquantix.com` e `supporto@relaquantix.com` su Hostinger (il sito le usa già ovunque).
-- [ ] **DNS**: puntare `relaquantix.com` e `www` alla VPS (record A) — gestito lato Coolify/altra sessione.
-- [ ] **SSL**: certificato Let's Encrypt automatico via Coolify.
+- [x] **DNS**: `relaquantix.com` e `www` puntano alla VPS. ✅ 16/07/2026
+- [x] **SSL**: Let's Encrypt attivo, scade 13/10/2026 con rinnovo automatico. ✅ 16/07/2026
+- [x] **Deploy automatico** dal push. ✅ 16/07/2026 — vedi sezione sotto
 - [ ] **Revisione legale**: far controllare `privacy.html` e `note-legali.html` da un professionista prima di considerarle definitive.
 - [ ] **Privacy per l'app**: prima della submission su App Store, estendere `privacy.html` con la sezione sui dati trattati dall'app.
 - [ ] **Hosting/dati**: verificare la region del data center Hostinger e allineare la frase sui trasferimenti extra-UE nella privacy.
 - [ ] (Opzionale) Upgrade tipografico con web font self-hosted per un tocco ancora più premium.
 - [ ] (Opzionale) Immagine `og:image` 1200×630 per anteprime social.
 
+## Deploy automatico (webhook GitHub → Coolify)
+
+Ogni push su `main` ri-pubblica il sito da solo, in ~25 secondi. La catena è:
+`git push` → webhook GitHub → Coolify verifica la firma → build → live.
+
+Configurazione attiva:
+- **Webhook GitHub** (repo → Settings → Webhooks): URL
+  `https://coolify.ordinaryangels.cloud/webhooks/source/github/events/manual`,
+  content type `application/json`, solo evento `push`.
+- **Coolify**: `Auto Deploy` acceso (Configuration → Advanced) e **secret** impostato
+  in Configuration → Webhooks → *GitHub Webhook Secret*.
+
+⚠️ **Trappola da ricordare:** con il build pack "Public Repository" il **secret è
+obbligatorio e deve essere identico** nei due campi (Coolify e GitHub). Lasciarlo vuoto
+da entrambe le parti **non** disattiva la verifica: Coolify calcola comunque la firma,
+non trova quella di GitHub e scarta il push rispondendo `200` con
+`{"status":"failed","message":"Invalid signature."}` — quindi **sembra funzionare
+ma non fa nulla, senza errori visibili**.
+
+Per diagnosticare, la risposta di Coolify si legge dal lato GitHub:
+```
+gh api repos/AmaCon967/relaquantix-sito/hooks --jq '.[0].id'
+gh api repos/AmaCon967/relaquantix-sito/hooks/<id>/deliveries
+gh api repos/AmaCon967/relaquantix-sito/hooks/<id>/deliveries/<delivery-id> --jq '.response.payload'
+```
+
 ## Storico
 - 15/07/2026 — Prima versione completa del sito (direzione B), pronta per il deploy.
+- 16/07/2026 — Sito online su relaquantix.com con HTTPS. Rimosso il capitale sociale
+  dalle statistiche della home (resta nel footer per obbligo di legge).
+  Attivato il deploy automatico dal push.
