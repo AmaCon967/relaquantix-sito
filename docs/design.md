@@ -33,6 +33,36 @@ Rela + Quantix = relatività + quantistica. In assenza di una teoria del tutto
 che unisca le due grandi teorie della fisica, l'azienda le unisce nel proprio nome.
 Filo conduttore visivo: motivo "orbita" (ellissi + nodo).
 
+## Logo — "Atomo a due orbite"
+
+Logo aziendale prodotto da Claude Design (16/07/2026). File in `assets/img/logo/`.
+Due orbite incrociate (una inchiostro, una rame), nucleo pieno, particella blu.
+
+| File | Stato |
+|---|---|
+| `symbol.svg` / `symbol-dark.svg` | ✅ **Usabili** — forme pure, nessuna dipendenza da font. In uso nell'header e nella favicon. |
+| `symbol.png` / `symbol-dark.png` | ✅ trasparenti |
+| `lockup-vertical.png` | ✅ trasparente, ma testo scuro (solo per fondi chiari) |
+| `lockup-horizontal.png` | ✅ trasparente, testo scuro |
+| `lockup-dark.png` | ⚠️ ha lo **sfondo `#16171f` opaco incorporato** — non appoggiabile su altri colori |
+| `lockup-vertical.svg` / `lockup-horizontal.svg` | ❌ **DIFETTOSI — non usare** |
+
+⚠️ **Perché i lockup SVG sono difettosi:** la scritta è un elemento `<text>` con classi
+CSS (`wm`, `tg`) che nel file non esistono, `<defs>` è vuoto e non c'è nessun
+`font-family`. Fuori dalla pagina che li ha generati la scritta ripiega su **Times**.
+Vanno rigenerati con il testo **convertito in tracciati** (outlines). Vale ovunque:
+sito, stampa, materiali App Store.
+
+### Colori del logo vs colori del sito
+| | Logo | Sito |
+|---|---|---|
+| Inchiostro | `#16171f` | `#1a1b22` (combaciano) |
+| Accento caldo | rame `#a99377` | oro `#a87b22` (diversi) |
+| Accento freddo | blu `#3f4fe0` | indaco `#26306b` (diversi) |
+
+Per ora convivono: il simbolo è piccolo e la differenza non stona. Se un domani si
+vuole coerenza totale, è il **sito** che dovrebbe allinearsi al logo, non il contrario.
+
 ## Dati legali (da Visura CCIAA Sud Est Sicilia, 24/10/2024)
 - Denominazione: **Relaquantix S.r.l.**
 - Sede legale: Viale della Regione 77, 95040 Motta Sant'Anastasia (CT)
@@ -57,6 +87,7 @@ resta generica. A pubblicazione avvenuta si aggiunge una sezione showcase con i 
 - [x] **DNS**: `relaquantix.com` e `www` puntano alla VPS. ✅ 16/07/2026
 - [x] **SSL**: Let's Encrypt attivo, scade 13/10/2026 con rinnovo automatico. ✅ 16/07/2026
 - [x] **Deploy automatico** dal push. ✅ 16/07/2026 — vedi sezione sotto
+- [ ] **Lockup SVG outlined**: farsi rigenerare da Claude Design `lockup-vertical.svg` e `lockup-horizontal.svg` con il testo **convertito in tracciati**. Chiedere anche **il nome del font** del wordmark. Solo allora si può mettere il lockup verticale nel **footer** (deciso il 16/07, rimasto in sospeso perché i file attuali non sono utilizzabili).
 - [ ] **Revisione legale**: far controllare `privacy.html` e `note-legali.html` da un professionista prima di considerarle definitive.
 - [ ] **Privacy per l'app**: prima della submission su App Store, estendere `privacy.html` con la sezione sui dati trattati dall'app.
 - [ ] **Hosting/dati**: verificare la region del data center Hostinger e allineare la frase sui trasferimenti extra-UE nella privacy.

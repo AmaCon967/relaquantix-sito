@@ -54,7 +54,7 @@ img,svg{max-width:100%;display:block;}
   border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;gap:1.5rem;height:72px;}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex:none;}
-.brand-mark{width:30px;height:30px;flex:none;}
+.brand-mark{width:36px;height:auto;flex:none;}
 .brand-text{font-family:var(--serif);font-weight:500;font-size:1.15rem;letter-spacing:.2em;
   text-transform:uppercase;}
 .brand-a{color:var(--indigo);} .brand-b{color:var(--gold);}

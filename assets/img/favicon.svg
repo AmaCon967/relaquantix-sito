@@ -1,6 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Relaquantix">
-  <rect width="64" height="64" rx="14" fill="#26306b"/>
-  <ellipse cx="32" cy="32" rx="22" ry="9" transform="rotate(-27 32 32)" fill="none" stroke="#c19233" stroke-width="2.6"/>
-  <circle cx="32" cy="32" r="5.2" fill="#f6f2e9"/>
-  <circle cx="50.5" cy="21.5" r="3.1" fill="#c19233"/>
+  <rect width="64" height="64" rx="14" fill="#16171f"/>
+  <g transform="translate(32,32) scale(0.235) translate(-110,-82)">
+    <ellipse cx="110" cy="82" rx="86" ry="33" transform="rotate(34 110 82)" fill="none" stroke="#b6a184" stroke-width="10"/>
+    <ellipse cx="110" cy="82" rx="86" ry="33" transform="rotate(-34 110 82)" fill="none" stroke="#f2ede0" stroke-width="11.5"/>
+    <circle cx="110" cy="82" r="17" fill="#f2ede0"/>
+    <circle cx="182" cy="43" r="13" fill="#6b76e8"/>
+  </g>
 </svg>
