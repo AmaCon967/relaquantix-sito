@@ -106,7 +106,7 @@ main{display:block;}
 .btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;}
 
 /* ---------- Stats ---------- */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:3rem;
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:3rem;
   background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
 .stat{background:var(--ivory-2);padding:1.5rem 1.3rem;}
 .stat-num{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.1rem);color:var(--indigo);line-height:1;}
@@ -179,7 +179,6 @@ main{display:block;}
 @media (max-width:860px){
   .footer-inner{grid-template-columns:1fr 1fr;}
   .footer-brand{grid-column:1 / -1;}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media (max-width:720px){
   .nav-toggle{display:grid;place-items:center;}
