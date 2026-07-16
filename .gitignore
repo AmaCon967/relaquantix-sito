@@ -4,3 +4,8 @@ Thumbs.db
 node_modules/
 .vscode/
 .idea/
+
+# Cartelle di consegna dei materiali: i file utili vanno copiati in assets/,
+# le cartelle originali NON devono finire nel repo pubblico.
+New loghi/
+Logo*/

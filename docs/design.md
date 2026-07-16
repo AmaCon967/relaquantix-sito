@@ -38,20 +38,32 @@ Filo conduttore visivo: motivo "orbita" (ellissi + nodo).
 Logo aziendale prodotto da Claude Design (16/07/2026). File in `assets/img/logo/`.
 Due orbite incrociate (una inchiostro, una rame), nucleo pieno, particella blu.
 
-| File | Stato |
-|---|---|
-| `symbol.svg` / `symbol-dark.svg` | ✅ **Usabili** — forme pure, nessuna dipendenza da font. In uso nell'header e nella favicon. |
-| `symbol.png` / `symbol-dark.png` | ✅ trasparenti |
-| `lockup-vertical.png` | ✅ trasparente, ma testo scuro (solo per fondi chiari) |
-| `lockup-horizontal.png` | ✅ trasparente, testo scuro |
-| `lockup-dark.png` | ⚠️ ha lo **sfondo `#16171f` opaco incorporato** — non appoggiabile su altri colori |
-| `lockup-vertical.svg` / `lockup-horizontal.svg` | ❌ **DIFETTOSI — non usare** |
+**Font del wordmark:** Poppins Light (300); la dicitura è Poppins Medium (500).
+Serve solo se un giorno si ricostruisce il lockup in HTML: gli SVG sono vettorializzati
+e non dipendono da nessun font installato.
 
-⚠️ **Perché i lockup SVG sono difettosi:** la scritta è un elemento `<text>` con classi
-CSS (`wm`, `tg`) che nel file non esistono, `<defs>` è vuoto e non c'è nessun
-`font-family`. Fuori dalla pagina che li ha generati la scritta ripiega su **Times**.
-Vanno rigenerati con il testo **convertito in tracciati** (outlines). Vale ovunque:
-sito, stampa, materiali App Store.
+| File | Uso |
+|---|---|
+| `symbol.svg` / `symbol-dark.svg` | Simbolo puro. **In uso**: header (inline) e favicon. |
+| `lockup-vertical.svg` | Lockup verticale per fondi chiari. |
+| `lockup-vertical-dark.svg` | Lockup verticale per fondi scuri. **In uso nel footer.** |
+| `lockup-horizontal.svg` | Lockup orizzontale (620×150), per fondi chiari. |
+| `wordmark.svg` | Solo la scritta (706×160), inchiostro `#16171f`. |
+| `*.png` | Versioni raster ad alta risoluzione, sfondo trasparente. |
+| `lockup-dark.png` | ⚠️ unico con lo **sfondo `#16171f` opaco incorporato**: non appoggiabile su altri colori. Usare `lockup-vertical-dark.svg`. |
+
+✅ **Tutti gli SVG sono vettorializzati** (testo convertito in tracciati, `<text>` = 0):
+sono affidabili ovunque — sito, stampa, biglietti, materiali App Store.
+
+⚠️ **Lezione imparata (16/07/2026):** la prima consegna aveva i lockup con la scritta
+come `<text>` vivo, senza `font-family` né font incorporato. Sembravano corretti nello
+screenshot (la pagina che li generava aveva il CSS), ma da soli la scritta ripiegava su
+**Times**. Prima di fidarsi di un SVG con del testo: `grep -c '<text' file.svg` — deve
+dare `0` — e renderizzarlo isolato (`qlmanage -t -s 700 -o out file.svg`).
+
+⚠️ **Dimensioni del lockup:** la dicitura è 12px su una tela di 460, cioè molto piccola
+in proporzione. Sotto i ~300px di larghezza diventa illeggibile (a 200px esce a 5px).
+Nel footer è a **330px**, dove la dicitura sta a ~8,6px: il minimo accettabile.
 
 ### Colori del logo vs colori del sito
 | | Logo | Sito |
@@ -87,7 +99,7 @@ resta generica. A pubblicazione avvenuta si aggiunge una sezione showcase con i 
 - [x] **DNS**: `relaquantix.com` e `www` puntano alla VPS. ✅ 16/07/2026
 - [x] **SSL**: Let's Encrypt attivo, scade 13/10/2026 con rinnovo automatico. ✅ 16/07/2026
 - [x] **Deploy automatico** dal push. ✅ 16/07/2026 — vedi sezione sotto
-- [ ] **Lockup SVG outlined**: farsi rigenerare da Claude Design `lockup-vertical.svg` e `lockup-horizontal.svg` con il testo **convertito in tracciati**. Chiedere anche **il nome del font** del wordmark. Solo allora si può mettere il lockup verticale nel **footer** (deciso il 16/07, rimasto in sospeso perché i file attuali non sono utilizzabili).
+- [x] **Lockup SVG outlined** ricevuti da Claude Design e integrati; lockup verticale nel footer. ✅ 16/07/2026
 - [ ] **Revisione legale**: far controllare `privacy.html` e `note-legali.html` da un professionista prima di considerarle definitive.
 - [ ] **Privacy per l'app**: prima della submission su App Store, estendere `privacy.html` con la sezione sui dati trattati dall'app.
 - [ ] **Hosting/dati**: verificare la region del data center Hostinger e allineare la frase sui trasferimenti extra-UE nella privacy.

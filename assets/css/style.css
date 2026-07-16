@@ -138,9 +138,8 @@ main{display:block;}
 .site-footer a{color:rgba(246,242,233,.82);}
 .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;
   padding:clamp(3rem,6vw,4.5rem) 0 2.2rem;}
-.footer-brand .brand-text{color:var(--ivory);}
-.footer-brand .brand-a{color:var(--ivory);} .footer-brand .brand-b{color:var(--gold-2);}
-.footer-tag{margin-top:1rem;font-size:.95rem;line-height:1.6;max-width:34ch;color:rgba(246,242,233,.7);}
+.footer-logo{width:min(100%,330px);height:auto;}
+.footer-tag{margin-top:1.3rem;font-size:.95rem;line-height:1.6;max-width:34ch;color:rgba(246,242,233,.7);}
 .footer-col h4{font-family:var(--sans);font-size:.75rem;font-weight:600;letter-spacing:.18em;
   text-transform:uppercase;color:rgba(246,242,233,.55);margin-bottom:1.1rem;}
 .footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem;}
