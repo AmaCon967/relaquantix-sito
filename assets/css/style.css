@@ -55,9 +55,7 @@ img,svg{max-width:100%;display:block;}
 .nav-inner{display:flex;align-items:center;gap:1.5rem;height:72px;}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex:none;}
 .brand-mark{width:36px;height:auto;flex:none;}
-.brand-text{font-family:var(--serif);font-weight:500;font-size:1.15rem;letter-spacing:.2em;
-  text-transform:uppercase;}
-.brand-a{color:var(--indigo);} .brand-b{color:var(--gold);}
+.brand-wordmark{height:26px;width:auto;display:block;}
 .nav-links{display:flex;align-items:center;gap:1.8rem;margin-left:auto;list-style:none;padding:0;}
 .nav-links a{color:var(--ink-soft);font-size:.9rem;letter-spacing:.01em;position:relative;padding:.3em 0;}
 .nav-links a:hover{color:var(--indigo);}

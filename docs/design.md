@@ -65,6 +65,12 @@ dare `0` — e renderizzarlo isolato (`qlmanage -t -s 700 -o out file.svg`).
 in proporzione. Sotto i ~300px di larghezza diventa illeggibile (a 200px esce a 5px).
 Nel footer è a **330px**, dove la dicitura sta a ~8,6px: il minimo accettabile.
 
+**Proporzioni nell'header:** simbolo inline a 36px + `wordmark.svg` alto 26px (≈115px
+di larghezza). Il rapporto larghezza-wordmark / larghezza-simbolo è **~3,2**, lo stesso
+del lockup orizzontale ufficiale: lì il simbolo è `scale(0.6)` (132 unità su una tela
+di 620) e la scritta ne occupa ~430. Se un giorno si ridimensiona il logo dell'header,
+mantenere quel rapporto.
+
 ### Colori del logo vs colori del sito
 | | Logo | Sito |
 |---|---|---|
