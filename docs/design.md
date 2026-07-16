@@ -89,6 +89,23 @@ gh api repos/AmaCon967/relaquantix-sito/hooks/<id>/deliveries
 gh api repos/AmaCon967/relaquantix-sito/hooks/<id>/deliveries/<delivery-id> --jq '.response.payload'
 ```
 
+## Cache dei file statici — IMPORTANTE
+
+Nginx serve CSS e JS senza header `Cache-Control`, quindi i browser li tengono in cache
+a lungo. Per questo `index.html` e le altre pagine richiamano gli asset **con un numero
+di versione**:
+
+```html
+<link rel="stylesheet" href="/assets/css/style.css?v=2">
+<script src="/assets/js/main.js?v=2" defer></script>
+```
+
+⚠️ **Ogni volta che modifichi `style.css` o `main.js`, incrementa `?v=` in TUTTE e quattro
+le pagine** (`index`, `privacy`, `note-legali`, `supporto`). Se te ne dimentichi, i
+visitatori che hanno già aperto il sito continuano a vedere la grafica vecchia mescolata
+all'HTML nuovo — con risultati visibilmente rotti (è già successo: una colonna vuota nelle
+statistiche dopo aver rimosso il capitale sociale).
+
 ## Storico
 - 15/07/2026 — Prima versione completa del sito (direzione B), pronta per il deploy.
 - 16/07/2026 — Sito online su relaquantix.com con HTTPS. Rimosso il capitale sociale
