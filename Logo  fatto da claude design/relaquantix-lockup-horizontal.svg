@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="150" viewBox="0 0 620 150" fill="none">
+<defs></defs>
+<g transform="translate(20,20) scale(0.6)">
+  <ellipse cx="110" cy="82" rx="86" ry="33" transform="rotate(34 110 82)" stroke="#a99377" stroke-width="6.5"></ellipse>
+  <ellipse cx="110" cy="82" rx="86" ry="33" transform="rotate(-34 110 82)" stroke="#16171f" stroke-width="7.5"></ellipse>
+  <circle cx="110" cy="82" r="15" fill="#16171f"></circle>
+  <circle cx="182" cy="43" r="10.5" fill="#3f4fe0"></circle></g>
+<text x="172" y="80" class="wm" font-size="48" fill="#16171f">relaquantix</text>
+<text x="174" y="106" class="tg" font-size="10.5" letter-spacing="2.5" fill="#a99377">PRODOTTI DIGITALI ED EDITORIALI</text>
+</svg>

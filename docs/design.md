@@ -53,7 +53,7 @@ store — decisione presa per non anticiparla. La divisione "App per dispositivi
 resta generica. A pubblicazione avvenuta si aggiunge una sezione showcase con i link store.
 
 ## Punti aperti / TODO operativi
-- [ ] **Creare le caselle email** `info@relaquantix.com` e `support@relaquantix.com` su Hostinger (il sito le usa già ovunque). Nota: il supporto è `support@` in inglese, non `supporto@`.
+- [x] **Caselle email** `info@relaquantix.com` e `support@relaquantix.com` create e operative su Hostinger. ✅ 16/07/2026 — MX su `mx1/mx2.hostinger.com`, SPF configurato. Nota: il supporto è `support@` in inglese, non `supporto@`.
 - [x] **DNS**: `relaquantix.com` e `www` puntano alla VPS. ✅ 16/07/2026
 - [x] **SSL**: Let's Encrypt attivo, scade 13/10/2026 con rinnovo automatico. ✅ 16/07/2026
 - [x] **Deploy automatico** dal push. ✅ 16/07/2026 — vedi sezione sotto
@@ -110,4 +110,6 @@ statistiche dopo aver rimosso il capitale sociale).
 - 15/07/2026 — Prima versione completa del sito (direzione B), pronta per il deploy.
 - 16/07/2026 — Sito online su relaquantix.com con HTTPS. Rimosso il capitale sociale
   dalle statistiche della home (resta nel footer per obbligo di legge).
-  Attivato il deploy automatico dal push.
+  Attivato il deploy automatico dal push. Versionati gli asset (`?v=`) contro la cache.
+  Indirizzo di supporto fissato a `support@`; caselle email create e operative.
+  **Il sito è pronto da collegare all'iscrizione Apple Developer.**
