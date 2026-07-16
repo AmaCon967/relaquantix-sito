@@ -53,7 +53,7 @@ store — decisione presa per non anticiparla. La divisione "App per dispositivi
 resta generica. A pubblicazione avvenuta si aggiunge una sezione showcase con i link store.
 
 ## Punti aperti / TODO operativi
-- [ ] **Creare le caselle email** `info@relaquantix.com` e `supporto@relaquantix.com` su Hostinger (il sito le usa già ovunque).
+- [ ] **Creare le caselle email** `info@relaquantix.com` e `support@relaquantix.com` su Hostinger (il sito le usa già ovunque). Nota: il supporto è `support@` in inglese, non `supporto@`.
 - [x] **DNS**: `relaquantix.com` e `www` puntano alla VPS. ✅ 16/07/2026
 - [x] **SSL**: Let's Encrypt attivo, scade 13/10/2026 con rinnovo automatico. ✅ 16/07/2026
 - [x] **Deploy automatico** dal push. ✅ 16/07/2026 — vedi sezione sotto
