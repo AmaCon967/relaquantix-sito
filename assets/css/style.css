@@ -163,6 +163,11 @@ main{display:block;}
 .back-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;}
 .doc-title{font-size:clamp(2rem,4.5vw,2.9rem);letter-spacing:-.01em;}
 .doc-updated{font-size:.86rem;color:var(--muted);margin-top:.8rem;font-family:var(--mono);letter-spacing:.02em;}
+.doc-langs{margin-top:1.1rem;font-size:.88rem;color:var(--muted);line-height:1.8;}
+.doc-langs strong{color:var(--ink);font-weight:600;}
+.doc-langs a{border-bottom:1px solid var(--line-2);}
+.doc-langs a:hover{color:var(--gold);border-color:var(--gold);}
+.doc-langs .sep{color:var(--muted);margin:0 .45em;}
 .doc-body{margin-top:2.6rem;color:var(--ink-soft);}
 .doc-body h2{font-size:1.35rem;color:var(--indigo);margin:2.4rem 0 .8rem;}
 .doc-body h3{font-size:1.08rem;font-family:var(--sans);font-weight:600;color:var(--ink);margin:1.6rem 0 .5rem;}
