@@ -83,7 +83,7 @@ vuole coerenza totale, è il **sito** che dovrebbe allinearsi al logo, non il co
 
 ## Dati legali (da Visura CCIAA Sud Est Sicilia, 24/10/2024)
 - Denominazione: **Relaquantix S.r.l.**
-- Sede legale: Viale della Regione 77, 95040 Motta Sant'Anastasia (CT)
+- Sede legale: Viale della Regione 77, 95062 Motta Sant'Anastasia (CT)
 - P.IVA / C.F.: 06106470872 — REA CT-467450
 - Capitale sociale: € 20.000,00 interamente versato
 - PEC: relaquantix@pec.it
